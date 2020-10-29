@@ -12,35 +12,34 @@ public class Main
         printSnowflake(size, calculateNumberOfLines(size), SNOWFLAKE_RAYS_COUNT);
     }
 
-    static void printSnowflake(int size, int numberOfLines, int raysNumber)
+    static void printSnowflake(int size, int numberOfLines, int raysCount)
     {
         System.out.println();
 
-        printUpperPart(numberOfLines, raysNumber);
+        printUpperPart(numberOfLines, raysCount);
         printMiddlePart(size);
-        printBottomPart(numberOfLines, raysNumber);
+        printBottomPart(numberOfLines, raysCount);
     }
 
     static int calculateNumberOfLines(int size)
     {
-        return ( (size - 1) / 2);
+        return ((size - 1) / 2);
     }
 
     static void printUpperPart(int numberOfLines, int raysNumber)
     {
-
-        for (int lineNumber = numberOfLines ; lineNumber > 0; lineNumber--)
+        for (int lineNumber = numberOfLines; lineNumber > 0; lineNumber--)
         {
             printLine(numberOfLines, lineNumber, raysNumber);
         }
     }
 
-    static void printLine(int lengthOfInitialHalfLine, int lengthOfCurrentHalfLine, int raysNumber)
+    static void printLine(int lengthOfInitialHalfLine, int lengthOfCurrentHalfLine, int raysCount)
     {
         printSpacesInLineBeginning(lengthOfInitialHalfLine
                 - lengthOfCurrentHalfLine);
 
-        for (int printedRays = 0; printedRays < raysNumber; printedRays++)
+        for (int printedRays = 0; printedRays < raysCount; printedRays++)
         {
             System.out.print('*');
             for (int numberOfSpaces = (lengthOfCurrentHalfLine - 1); numberOfSpaces > 0; numberOfSpaces--)
@@ -54,7 +53,7 @@ public class Main
 
     static void printSpacesInLineBeginning(int numberOfSpaces)
     {
-        for (; numberOfSpaces > 0; numberOfSpaces-- )
+        for (int printedSpaces = 0; printedSpaces < numberOfSpaces; printedSpaces++)
         {
             System.out.print(' ');
         }
@@ -62,7 +61,7 @@ public class Main
 
     static void printMiddlePart(int size)
     {
-        for (int printed = 0; printed < size; printed++)
+        for (int printedElements = 0; printedElements < size; printedElements++)
         {
             System.out.print('*');
         }
@@ -71,7 +70,6 @@ public class Main
 
     static void printBottomPart(int numberOfLines, int raysNumber)
     {
-
         for (int lineNumber = 1; lineNumber <= numberOfLines; lineNumber++)
         {
             printLine(numberOfLines, lineNumber, raysNumber);
