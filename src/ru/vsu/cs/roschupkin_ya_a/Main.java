@@ -85,7 +85,7 @@ public class Main
         if ((size < 5) || (size % 2 == 0))
         {
             System.out.printf(
-                    "%nInput problem: size of the shape should be an odd decimal greater or equal to 5." +
+                    "%nInput problem: size of the shape should be an odd integer number greater or equal to 5." +
                             " Please try again%n%n");
 
             return readSize();
