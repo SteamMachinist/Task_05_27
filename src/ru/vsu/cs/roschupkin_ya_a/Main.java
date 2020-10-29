@@ -82,10 +82,10 @@ public class Main
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
 
-        if (size < 5)
+        if ((size < 5) || (size % 2 == 0))
         {
             System.out.printf(
-                    "%nInput problem: size of the shape should be decimal greater or equal to 5." +
+                    "%nInput problem: size of the shape should be an odd decimal greater or equal to 5." +
                             " Please try again%n%n");
 
             return readSize();
